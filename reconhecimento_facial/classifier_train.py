@@ -20,6 +20,6 @@ def get_image_data():
 ids, faces = get_image_data()
 
 # print(os.getcwd())
-lbph_classifier = cv2.face.LBPHFaceRecognizer_create()  #cria o classificador de faces
+lbph_classifier = cv2.face.LBPHFaceRecognizer_create(radius=2, neighbors=8, grid_x=8, grid_y=8)  #cria o classificador de faces
 lbph_classifier.train(faces, ids)  #treina o classificador
-lbph_classifier.write('reconhecimento_facial\\classifier\\lbph_classifier.yml')   #cria o arquivo .yml
+lbph_classifier.write('reconhecimento_facial\\classifier\\lbph_classifier4.yml')   #cria o arquivo .yml
